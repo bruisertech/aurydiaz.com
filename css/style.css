@@ -655,8 +655,7 @@
       padding: 32px 36px; min-width: 860px; box-shadow: 0 30px 80px rgba(0,0,0,0.7);
       grid-template-columns: repeat(3, 1fr); gap: 36px;
     }
-    .nav-links > li:hover .mega-menu { display: grid; animation: fadeDown 0.22s ease; }
-    @keyframes fadeDown { from { opacity: 0; transform: translateX(-50%) translateY(-10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+    .nav-links > li:hover .mega-menu { display: grid; animation: megaFade 0.22s ease; }
     .mega-col h4 {
       font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700;
       color: var(--gold); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 14px;
@@ -670,7 +669,7 @@
     }
     .mega-col ul li a:hover { color: var(--white); padding-left: 4px; }
     .mega-col ul li a.featured { color: var(--white); font-weight: 600; }
-    .mega-col ul li a.featured::before { content: '★'; color: var(--gold); font-size: 0.65rem; -webkit-flex-shrink: 0; flex-shrink: 0; }
+    .mega-col ul li a.featured::before { content: '\f005'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--gold); font-size: 0.65rem; -webkit-flex-shrink: 0; flex-shrink: 0; }
 
     /* DROPDOWN */
     .dropdown {
@@ -678,7 +677,7 @@
       background: rgba(6,14,28,0.99); border: 1px solid rgba(201,169,97,0.18); border-radius: 8px;
       padding: 10px 0; min-width: 240px; box-shadow: 0 16px 40px rgba(0,0,0,0.5);
     }
-    .nav-links > li:hover .dropdown { display: block; animation: fadeDown 0.2s ease; }
+    .nav-links > li:hover .dropdown { display: block; animation: dropFade 0.2s ease; }
     .dropdown a {
       display: block; padding: 10px 20px; font-family: 'Source Sans 3', sans-serif;
       font-size: 0.87rem; color: rgba(255,255,255,0.78); text-decoration: none; transition: var(--transition);
@@ -857,7 +856,7 @@
     .area-card:hover .area-items li { color: rgba(255,255,255,0.62); border-color: rgba(255,255,255,0.08); }
     .area-items li.featured { color: var(--carbon); font-weight: 600; }
     .area-card:hover .area-items li.featured { color: var(--gold); }
-    .area-items li::before { content: '→'; font-size: 0.72rem; color: var(--gold); opacity: 0.55; -webkit-flex-shrink: 0; flex-shrink: 0; }
+    .area-items li::before { content: '\f061'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 0.72rem; color: var(--gold); opacity: 0.55; -webkit-flex-shrink: 0; flex-shrink: 0; }
     .area-items li.featured::before { opacity: 1; }
     .area-link {
       display: inline-flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif;
@@ -890,7 +889,7 @@
     .modal-desc { font-family: 'Source Sans 3', sans-serif; font-size: 0.97rem; color: rgba(255,255,255,0.68); line-height: 1.8; margin-bottom: 30px; }
     .modal-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; margin-bottom: 32px; }
     .modal-list li { font-family: 'Source Sans 3', sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.75); display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: start; -webkit-align-items: flex-start; align-items: flex-start; gap: 8px; line-height: 1.5; }
-    .modal-list li::before { content: '✦'; color: var(--gold); font-size: 0.6rem; -webkit-flex-shrink: 0; flex-shrink: 0; margin-top: 4px; }
+    .modal-list li::before { content: '\f3a5'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--gold); font-size: 0.6rem; -webkit-flex-shrink: 0; flex-shrink: 0; margin-top: 4px; }
     .modal-list li.featured { color: var(--white); font-weight: 600; }
     .modal-norm { background: rgba(201,169,97,0.06); border: 1px solid rgba(201,169,97,0.15); border-radius: 8px; padding: 18px 22px; margin-bottom: 28px; }
     .modal-norm h5 { font-family: 'Montserrat', sans-serif; font-size: 0.66rem; font-weight: 700; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
@@ -1141,3 +1140,20 @@
     /* Scroll reveal */
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
+.fa-icon-gold { color: var(--gold); font-weight: 300; margin-right: 5px; }
+
+.mega-menu::before, .dropdown::before { content: ''; position: absolute; top: -15px; left: 0; right: 0; height: 15px; background: transparent; }
+
+
+header.solid-header { background: rgba(8, 15, 32, 0.98) !important; }
+
+@keyframes megaFade {
+  from { opacity: 0; transform: translateX(-50%); }
+  to { opacity: 1; transform: translateX(-50%); }
+}
+
+@keyframes dropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

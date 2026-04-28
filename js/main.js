@@ -34,7 +34,7 @@ function closeMobile() {
 /* ═══════════════════ HEADER SCROLL ═══════════════════ */
 window.addEventListener('scroll', () => {
   const h = document.querySelector('header');
-  h.style.background = window.scrollY > 60 ? 'rgba(4,8,16,0.99)' : 'rgba(8,15,32,0.97)';
+  if(!h.classList.contains('solid-header')) { h.style.background = window.scrollY > 60 ? 'rgba(4,8,16,0.99)' : 'rgba(8,15,32,0.97)'; }
 });
 
 /* ═══════════════════ TABS ═══════════════════ */
