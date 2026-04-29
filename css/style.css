@@ -901,8 +901,8 @@
     .director-section { background: var(--navy-dark); padding: 90px 0; }
     .director-grid { display: grid; grid-template-columns: 400px 1fr; gap: 70px; align-items: start; }
     .director-photo {
-      position: relative; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--navy) 0%, var(--carbon) 100%);
-      border-radius: 8px; overflow: hidden; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;
+      position: relative; background: linear-gradient(135deg, var(--navy) 0%, var(--carbon) 100%);
+      border-radius: 8px; height: auto; padding-bottom: 40px; overflow: visible; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;
     }
     .director-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
     .director-photo-placeholder { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; flex-direction: column; -webkit-box-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; gap: 14px; color: rgba(255,255,255,0.25); padding: 40px; text-align: center; }
@@ -1099,7 +1099,7 @@
       .hero-container { grid-template-columns: 1fr; padding-top: 120px; }
       .hero-photo-card { max-width: 420px; margin: 0 auto; }
       .director-grid { grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; }
-      .director-photo { aspect-ratio: 4/3; max-height: 360px; }
+      .director-photo { height: auto; padding-bottom: 40px; overflow: visible; }
       .areas-grid { grid-template-columns: 1fr; }
       .service-cards { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1156,4 +1156,10 @@ header.solid-header { background: rgba(8, 15, 32, 0.98) !important; }
 @keyframes dropFade {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+.director-grid, .director-content {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding-bottom: 40px;
 }
