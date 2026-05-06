@@ -899,7 +899,7 @@
 
     /* ═══════════════════ DIRECTOR ═══════════════════ */
     .director-section { background: var(--navy-dark); padding: 90px 0; }
-    .director-grid { display: grid; grid-template-columns: 400px 1fr; gap: 70px; align-items: start; }
+    .director-grid { display: grid; grid-template-columns: 400px 1fr; gap: 70px; align-items: start; height: auto !important; max-height: none !important; overflow: visible !important; padding-bottom: 40px; }
     .director-photo {
       position: relative; background: linear-gradient(135deg, var(--navy) 0%, var(--carbon) 100%);
       border-radius: 8px; height: auto; padding-bottom: 40px; overflow: visible; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;
@@ -917,7 +917,7 @@
       background: var(--gold); padding: 9px 16px; border-radius: 3px;
     }
     .director-photo-tag span { font-family: 'Montserrat', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; color: var(--navy-dark); text-transform: uppercase; }
-    .director-content { color: var(--white); }
+    .director-content { color: var(--white); height: auto !important; max-height: none !important; overflow: visible !important; padding-bottom: 40px; }
     .director-name { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
     .director-role { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 500; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 28px; }
     .director-bio { font-family: 'Source Sans 3', sans-serif; font-size: 0.98rem; color: rgba(255,255,255,0.7); line-height: 1.85; margin-bottom: 36px; }
