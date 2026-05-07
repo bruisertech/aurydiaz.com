@@ -309,8 +309,8 @@
         <h5 data-lang="es">Áreas de Práctica</h5>
         <h5 data-lang="en">Practice Areas</h5>
         <ul>
-          <li><a href="areas.html#areas" onclick="openModal('penal');return false;" data-lang="es">Defensa Penal</a><a href="areas.html#areas" onclick="openModal('penal');return false;" data-lang="en">Criminal Defense</a></li>
-          <li><a href="areas.html#areas" onclick="openModal('disciplinario');return false;" data-lang="es">Derecho Público</a><a href="areas.html#areas" onclick="openModal('disciplinario');return false;" data-lang="en">Public Law</a></li>
+          <li><a href="areas.html#areas" onclick="openModal('penal');return false;" data-lang="es" onclick="openModal(\'penal\');return false;">Defensa Penal</a><a href="areas.html#areas" onclick="openModal('penal');return false;" data-lang="en" onclick="openModal(\'penal\');return false;">Criminal Defense</a></li>
+          <li><a href="areas.html#areas" onclick="openModal('disciplinario');return false;" data-lang="es" onclick="openModal(\'disciplinario\');return false;">Derecho Público</a><a href="areas.html#areas" onclick="openModal('disciplinario');return false;" data-lang="en" onclick="openModal(\'disciplinario\');return false;">Public Law</a></li>
           <li><a href="areas.html#areas" data-lang="es">Derecho Corporativo</a><a href="areas.html#areas" data-lang="en">Corporate Law</a></li>
           <li><a href="areas.html#areas" data-lang="es">Derecho Laboral</a><a href="areas.html#areas" data-lang="en">Labor Law</a></li>
           <li><a href="areas.html#areas" data-lang="es">Familia y Sucesiones</a><a href="areas.html#areas" data-lang="en">Family & Inheritance</a></li>
@@ -385,9 +385,9 @@
 <script>
 /* ═══════════════════ LANGUAGE ═══════════════════ */
 function setLang(lang) {
-  const body = document.getElementById('body-root');
-  body.classList.remove('lang-es','lang-en');
-  body.classList.add('lang-' + lang);
+  const root = document.documentElement;
+  root.classList.remove('lang-es','lang-en');
+  root.classList.add('lang-' + lang);
   document.getElementById('btn-es').classList.toggle('active', lang === 'es');
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.getElementById('html-root').lang = lang;
@@ -399,7 +399,7 @@ function setLang(lang) {
   const saved = localStorage.getItem('preferredLang');
   if(saved) { setLang(saved); return; }
   const browser = navigator.language || 'es';
-  if(browser.startsWith('en')) setLang('en');
+  if(browser.startsWith('en')) { setLang('en'); } else { setLang('es'); }
 })();
 
 /* ═══════════════════ MOBILE NAV ═══════════════════ */

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" class="lang-es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+    /* i18n hidden/visible */
+    html.lang-es [data-lang="en"] { display: none !important; }
+    html.lang-en [data-lang="es"] { display: none !important; }
+    html.lang-es [data-lang="es"] { display: block; }
+    html.lang-en [data-lang="en"] { display: block; }
+    span[data-lang] { display: inline-block; }
+    html.lang-es span[data-lang="es"] { display: inline; }
+    html.lang-en span[data-lang="en"] { display: inline; }
+    </style>
+</head>
+<body>
+    <h1 data-lang="es">Hola Mundo</h1>
+    <h1 data-lang="en">Hello World</h1>
+</body>
+</html>
